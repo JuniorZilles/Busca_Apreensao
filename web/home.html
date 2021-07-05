@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>INCLUSÃO DADOS</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="shortcut icon" href="book.png" type="image/x-icon" />
+</head>
+
+<body>
+    <nav class="topnav">
+        <ul>
+            <li><a href="home.html" class="active">Cadastro</a></li>
+            <li><a href="registros.html">Registros Concluídos</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="index.html" onclick="logout()" style="float:right">Logout</a>
+        </ul>
+    </nav>
+    <div class="container">
+        <form id="contact" action="" method="post">
+            <h3>Inclusão de Dados</h3>
+            <fieldset>
+                <input class="input" placeholder="Numeração da Placa" id="placa" name="placa" type="text" tabindex="1"
+                    autofocus>
+            </fieldset>
+            <fieldset>
+                <input id="marca" name="marca" placeholder="Marca do carro" type="text" tabindex="2">
+            </fieldset>
+
+            <fieldset>
+                <input id="modelo" name="modelo" placeholder="Modelo do Carro" tabindex="3" type="text">
+            </fieldset>
+            <fieldset>
+                <input maxlength="4" id="ano" name="ano" placeholder="Ano do carro" type="text" tabindex="4">
+            </fieldset>
+            <fieldset>
+                <input id="cor" name="cor" placeholder="Cor do carro" type="text" tabindex="5">
+            </fieldset>
+            <fieldset>
+                <textarea id="observacao" name="observacao" type="text" placeholder="Observações"
+                    tabindex="6"></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="button" onclick="criarCard()" id="contact-submit"
+                    data-submit="...Sending">Salvar</button>
+            </fieldset>
+        </form>
+        <div class="container2">
+            <div class="card-container">
+            </div>
+        </div>
+
+
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+        <!-- Add additional services that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/ui/4.3.0/firebase-ui-auth.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "APIKEY",
+                authDomain: "AUTHDOMAIN",
+                databaseURL: "DATABASEURL",
+                projectId: "PROJECTID",
+                storageBucket: "BUCKETNAME",
+                messagingSenderId: "MESSAGINGID",
+                appId: "APPID"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Nosso app -->
+        <script src="./app.js"></script>
+</body>
+
+</html>
